@@ -15,7 +15,7 @@ Microduck is the biped robot from Pollen Robotics and Hugging Face. Around it, c
 
 This collection starts with the part of the duck you want to change. Its eight categories cover individual accessories, modifications inside larger replica projects, and the software needed to run replacement hardware. You might come looking for a calibration tray, or to compare several controller platforms. The aim is to help DIY builders find something they can make, and robotics developers find a useful starting point or a potential collaborator.
 
-The directory currently contains **33 projects**. Each entry explains the purpose, the available materials and the key development milestone, then links to the author's own project. It should be clear whether the next step is downloading a model, following a build guide, studying code or watching an experiment develop. Projects are listed once, under their primary use.
+The directory currently contains **45 projects**. Each entry explains the purpose, the available materials and the key development milestone, then links to the author's own project. It should be clear whether the next step is downloading a model, following a build guide, studying code or watching an experiment develop. Projects are listed once, under their primary use.
 
 This is an independent community collection, unaffiliated with Pollen Robotics or Hugging Face. Linked projects belong to their authors; code, CAD, models and images retain their own licenses. The header is a concept illustration, not a set of validated accessory designs.
 
@@ -36,7 +36,7 @@ This is an independent community collection, unaffiliated with Pollen Robotics o
 
 ## Ecosystem Status
 
-These observations reflect the **33 projects in this directory as of 4 November 2026**. They show a community building and testing as it goes: some modifications have reached physical robots, while others explore new structures, controller platforms and ways to interact.
+These observations reflect the **45 projects in this directory as of 9 November 2026**. They show a community building and testing as it goes: some modifications have reached physical robots, while others explore new structures, controller platforms and ways to interact.
 
 **Many accessories grow out of full replica builds.** Choosing different motors, a computer or a battery creates work elsewhere: connection boards, internal space, feet and calibration fixtures may all need to change. [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) includes replaceable feet and revised leg supports; [CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) documents changes to head covers, ankles, cable clips and electronics mounts. A full-build repository can therefore be a useful source of individual parts, with a practical assembly problem behind each change.
 
@@ -48,7 +48,11 @@ These observations reflect the **33 projects in this directory as of 4 November 
 
 ## Appearance
 
-A different look for Microduck: themed shells, hats, clothing and decorative parts. The current selection has no standalone appearance-only project. Shells redesigned to fit components or improve printing are listed under [Mechanical Design](#mechanical-design).
+A different look for Microduck: themed shells, colors, clothing and decorative parts. Design-only work is included when its digital and physical validation boundaries are explicit.
+
+- **[Microduck Color and Sticker Console](https://github.com/lucienxxxxxx/microduck-console)** (lucienxxxxxx) — A browser-based preview tool for trying colors and preset stickers on individual body parts before making the modification. It does not manufacture a part. The console code is MIT; the official meshes and assembly data retain their CC BY-NC-SA non-commercial terms.
+
+- **[Gritty-Themed Microduck](https://github.com/maddiedreese/gritty-microduck)** (maddiedreese) — An editable orange-shag, googly-eye and hockey-sweater costume concept with two reproducible MuJoCo performances. The fur and clothing are massless, non-colliding visual geometry. No physical garment or hardware validation has been completed.
 
 ## Mounts
 
@@ -84,6 +88,8 @@ Knowing where the duck was touched, or which way its body is leaning. Touch sens
 
 - **[my-microduck](https://github.com/ReadbytheBeach/my-microduck)** (ReadbytheBeach) — Plans four 12×12 pressure arrays across Microduck's head and soles, using the head for touch interaction and the feet for ground-contact sensing. The repository describes scanning circuitry and communication integration. It is a design-stage project, without evidence of a complete physical deployment of the electronic skin.
 
+- **[LSM6DSV16X Bare-IMU Compatibility Library](https://github.com/sim336/lsm6dsv16x-sflp)** (sim336) — Lets a Linux controller read the orientation chip directly over I²C and emit the same 12-byte data block as the existing MCU carrier. Tests cover silent register, scaling and mounting failures. Measurements come from one Radxa board, so each board and physical mounting still needs its own verification.
+
 ## Electronics
 
 Changing a controller or a joint motor often means changing wiring and software as well. This section covers replica connection boards, alternative electronics and the work of running Microduck models on different computing platforms.
@@ -118,6 +124,10 @@ Changing a controller or a joint motor often means changing wiring and software 
 
 - **[duck-a733](https://github.com/weilan157/duck-a733)** (weilan157) — Builds an SD-card system image for the A733 route, packaging the bootable system and robot application at specified versions. Reduces the work of compiling, installing and assembling compatible software versions. It is supporting software for a hardware modification; wiring, joint calibration and movement testing still belong to the corresponding robot build.
 
+- **[Radxa ZERO 3W Robot HAT](https://github.com/juper007/radxa-zero3w-robot-hat)** (juper007) — A compact expansion board for fifteen XL330 servos, the body IMU, I²C sensors, microphone, speaker and protected 5 V power. KiCad projects, Gerbers, BOM and bring-up tools are available. V1 is still under power and high-current layout review and has not been fabrication-approved.
+
+- **[Duck King S288 Conversion](https://github.com/zhanma666/Xihack2026_The_Duck_King)** (zhanma666) — Replaces XL330 joints with Unitree S288 servos and supplies a rebuilt MuJoCo model, joint mapping, setup script and training task. Actuator values are still placeholders, the BAM model is missing and passive standing falls forward. Training integration is therefore not evidence of a working physical S288 duck.
+
 ## Mechanical Design
 
 Making the body fit a different component, manufacturing method or scale. Some projects address local assembly problems; others redesign the whole structure.
@@ -132,6 +142,18 @@ Making the body fit a different component, manufacturing method or scale. Some p
 
 - **[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck)** (qilinxiaoxiang) — Changes head covers, ankles, soles, cable clips and electronics enclosures on an A7Z/OpenRB replica, with touch sensing that detects a grip on the head. Parts lists and physical walking and touch records show the modifications in a complete build. The battery backpack has been designed but is not installed.
 
+- **[MicroDinosaur](https://github.com/eugenewang5425/MicroDinosaur)** (eugenewang5425) — Reworks Microduck into an S288-powered small biped dinosaur. Publishes the current Blender assembly, a 30-part print project, a three-piece calibration fixture, a six-layer head board and dual-bus software. The head board is not fabricated and the complete robot has not been assembled, stood or walked.
+
+- **[DuckLite](https://github.com/charlie8612/DuckLite)** (charlie8612) — A low-cost open-hardware redesign targeting a roughly US$150, 22 cm vision biped while keeping Microduck's 50 Hz control and ONNX policy interfaces. Mechanical, electronics, firmware and simulation workspaces are organized, but the project remains at architecture and component-selection stage; its next milestone is a one-leg actuator bench.
+
+- **[Micro Cat](https://github.com/hwkim3330/micro-cat)** (hwkim3330) — An independent cat-shaped biped that keeps the 61-input/14-output Microduck policy interface while redesigning the head, ears, tail, feet and internal layout. CAD checks cover print volume, static interference and balance. No physical printing, assembly, walking or durability test has been completed.
+
+- **[HL-2909 Servo Print Set](https://github.com/MenciousL/microduck-hl2909-print)** (MenciousL) — Provides four fit coupons and 39 printable body parts for replacing XL330 joints with Feetech HL-2909 servos. It is a drawing-validation release: builders should test the coupons first. Power is not adapted, because HL-2909 servos require 9–14 V and add roughly 67 g across fifteen joints.
+
+- **[Microduck × Stack-chan](https://github.com/meganetaaan/microduck-stackchan)** (meganetaaan) — Combines a portrait M5Stack Tab5 head with Microduck legs, including assembly geometry, a provisional BOM, trained arm-free gaits and a browser simulator. The thin-arm version is visual only and has not been included in mass, collisions or retraining. Physical wiring, strength and safety remain unverified.
+
+- **[IndieDuck Cyber Edition](https://github.com/armature-ai-labs/indieduck)** (Armature AI Labs) — Organizes editable FreeCAD/STEP/STL, 55 printed parts, a BOM and an interactive assembly guide around one mechanism with interchangeable exteriors. The R25 steps are CAD-reviewed rather than physically verified; wiring, strength, sensors, power and trained locomotion are still open work.
+
 ## Assembly Tools
 
 Holding the body steady and placing joints in a known pose. These tools help with assembly and zero calibration so the controller's joint positions correspond to the physical robot.
@@ -143,6 +165,8 @@ Holding the body steady and placing joints in a known pose. These tools help wit
 - **[MHDuck](https://github.com/MHDuck/microduck)** (MHDuck) — A [zero-calibration reference](https://github.com/MHDuck/microduck/blob/master/%E6%A0%A1%E5%87%86.md) within the HD1910/BNO085 replica route, showing how a fixture supports and positions the body before joint setup. Runtime code, policy files and a [training repository](https://github.com/MHDuck/microduck_rl) are public. The fixture can be studied through photographs and instructions; printable design files have not been found.
 
 - **[Wamoduck](https://github.com/Wamotech/Wamoduck)** (Wamotech) — A [standing-zero calibration fixture](https://github.com/Wamotech/Wamoduck/tree/HEAD/hardware/fixtures/standing-zero) for the author's redesigned robot, using four printed parts to hold a consistent reference pose. STEP, STL and print-project files are published. Physical fit status is unconfirmed; it targets the Wamoduck structure, with no verified fit for an official retail duck.
+
+- **[Microduck Servo Bench Tools](https://github.com/masszhou/microduck-notes)** (masszhou) — A DSH web dashboard and Mac command-line bench for finding, inspecting, centering and carefully moving fifteen XL330 servos before full assembly. It records position, current, temperature and bus errors with explicit safety limits. Encoder center is a bench reference, not the assembled robot's standing zero pose.
 
 ## Contributing
 

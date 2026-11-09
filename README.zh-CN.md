@@ -15,7 +15,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 这个合集从“你想改哪一部分”出发，把这些分散的项目整理成八类。你可以来找一个校准托盘，也可以比较几条替代主控路线；既能看到独立发布的小配件，也能找到整机复刻仓库里的结构改件。目录面向想跟着制作的 DIY 用户，以及寻找技术参考、开发方向和合作对象的机器人开发者。
 
-当前收录 **33 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
+当前收录 **45 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
 
 本合集独立维护，与 Pollen Robotics / Hugging Face 无隶属关系。所收录项目归各自作者所有；代码、图纸、模型和图片分别遵循原项目许可。头图为主题概念插画，不代表已验证的配件设计。
 
@@ -36,7 +36,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 ## Ecosystem Status
 
-以下是截至 **2026-11-04**、基于本目录 33 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
+以下是截至 **2026-11-09**、基于本目录 45 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
 
 **不少配件是从整机复刻中长出来的。** 社区作者选择不同的电机、主控和电池后，需要重新安排连接板、机身内部空间、脚掌和校准工具。例如 [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) 包含可更换脚掌和腿部支撑，[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) 则逐步调整头盖、脚踝、线夹和设备收纳结构。找配件时，整机仓库同样值得翻看；其中的小改件往往对应具体装配需求。
 
@@ -48,7 +48,11 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 ## 外观装扮 Appearance
 
-给 Microduck 换一种样子：主题外壳、帽子、服装和装饰件都属于这一类。当前这批项目还没有独立的纯装扮作品；为容纳新零件或改善打印而重做的外壳，放在[机身结构改进](#机身结构改进-mechanical-design)。
+给 Microduck 换一种样子：主题外壳、配色、服装和装饰件都属于这一类。只要清楚写明数字设计与实物验证的边界，仍在设计阶段的外观项目也可以收录。
+
+- **[Microduck 配色与贴纸预览台](https://github.com/lucienxxxxxx/microduck-console)**（lucienxxxxxx）— 在浏览器里点选身体部件，先试配颜色和预设贴纸，再决定怎样制作外观。它本身不制造零件。工具代码为 MIT；官方网格和装配数据继续遵循 CC BY-NC-SA 非商业条件。
+
+- **[Gritty 主题机器鸭](https://github.com/maddiedreese/gritty-microduck)**（maddiedreese）— 橙色毛绒、大眼睛和球衣造型的可编辑概念方案，并提供两段可复现的 MuJoCo 舞台动作。毛绒和衣服目前只是无质量、无碰撞的视觉几何，没有制作实体服装，也没有完成硬件验证。
 
 ## 随身挂载配件 Mounts
 
@@ -84,6 +88,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[my-microduck](https://github.com/ReadbytheBeach/my-microduck)**（ReadbytheBeach）— 计划把四块 12×12 压力感应阵列装到 Microduck 的头部和足底：头部用于触摸互动，足底用于感知与地面的接触。仓库整理了读取这些感应点的电路和通信方案，目前处于设计阶段，尚无整套电子皮肤完成实体部署的记录。
 
+- **[LSM6DSV16X 裸 IMU 兼容库](https://github.com/sim336/lsm6dsv16x-sflp)**（sim336）— 让 Linux 主控通过 I2C 直接读取姿态芯片，并输出与现有 MCU 小板相同的 12 字节数据。测试覆盖寄存器、量程和安装方向等容易静默出错的问题。测量来自一块 Radxa 板，换主板或安装方向后仍需重新验证。
+
 ## 电控系统改装 Electronics
 
 换一块主控、改用另一种关节电机，往往还要调整接线和控制程序。这里既有复刻用的连接板，也有让 Microduck 动作模型运行在不同计算平台上的尝试。
@@ -118,6 +124,10 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[duck-a733](https://github.com/weilan157/duck-a733)**（weilan157）— 为已经选择 A733 主控的 Microduck 整理一份可写入 SD 卡的系统镜像，把启动系统和机器人应用按指定版本打包。它帮助这条改装路线减少逐个编译、安装和处理版本组合的工作，属于配套软件；硬件接线、关节校准和动作调试仍由对应方案完成。
 
+- **[Radxa ZERO 3W Robot HAT](https://github.com/juper007/radxa-zero3w-robot-hat)**（juper007）— 为 Radxa ZERO 3W 设计紧凑扩展板，把 15 路 XL330 舵机、身体 IMU、I2C 传感器、麦克风、扬声器和受保护的 5V 供电接到一起。仓库有 KiCad、Gerber、BOM 和调试工具；V1 的电源与大电流布局仍在审查，尚未获得制造放行。
+
+- **[Duck King S288 电机改型](https://github.com/zhanma666/Xihack2026_The_Duck_King)**（zhanma666）— 把 XL330 换成宇树 S288 舵机，提供重建后的 MuJoCo 模型、关节映射、安装脚本和训练任务。电机参数目前仍是占位值，BAM 执行器模型未建立，被动站立还会前倾；训练链路跑通不能当作实体 S288 鸭已经能走。
+
 ## 机身结构改进 Mechanical Design
 
 让机身适应新的零件、制造方法或尺寸。这些项目中，有的修正局部装配问题，有的重新设计整只鸭子的结构。
@@ -132,6 +142,18 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck)**（qilinxiaoxiang）— 在 A7Z/OpenRB 复刻版上陆续改造头盖、脚踝、脚底、线夹和电子设备收纳结构，也加入触摸感知，让抓握头部能触发相应状态。仓库有零件清单、行走和触摸实机记录，能看到改件如何融入整机。电池背包目前只有设计，尚未装上使用。
 
+- **[MicroDinosaur](https://github.com/eugenewang5425/MicroDinosaur)**（eugenewang5425）— 把 Microduck 改成使用 S288 舵机的小型双足恐龙，公开当前 Blender 总成、30 件打印工程、三件式零位校准架、六层头板和双总线软件。头板尚未打样，整机也没有完成实体装配、站立和行走验证。
+
+- **[DuckLite](https://github.com/charlie8612/DuckLite)**（charlie8612）— 目标是用零售零件做一只约 150 美元、22 厘米高的低成本视觉双足机器人，并继续兼容 Microduck 的 50Hz 控制与 ONNX 动作接口。机械、电控、固件和仿真工作区已经划分，但目前仍在架构和器件选型阶段，下一步才是一条腿的执行器台架。
+
+- **[Micro Cat](https://github.com/hwkim3330/micro-cat)**（hwkim3330）— 保留 Microduck 的 61 输入、14 输出动作接口，重新设计圆头、猫耳、尾巴、脚和内部机电布局。CAD 已检查打印空间、静态干涉和重心；还没有实体打印、装配、行走或耐久测试。
+
+- **[HL-2909 电机适配打印件](https://github.com/MenciousL/microduck-hl2909-print)**（MenciousL）— 提供四个配合检具和 39 件整机 STL，帮助把 XL330 换成飞特 HL-2909。当前仍是图纸验证版，应先打印检具核对实物。项目没有解决供电：HL-2909 需要 9–14V，15 个电机还会增加约 67 克重量。
+
+- **[Microduck × Stack-chan](https://github.com/meganetaaan/microduck-stackchan)**（meganetaaan）— 把竖置 M5Stack Tab5 屏幕变成机器鸭的头部，公开装配结构、暂定 BOM、训练过的无臂步态和浏览器模拟器。薄型手臂目前只是外观，不计入质量、碰撞和重新训练；实机接线、强度和安全仍待验证。
+
+- **[IndieDuck Cyber Edition](https://github.com/armature-ai-labs/indieduck)**（Armature AI Labs）— 围绕一套共享机构组织可编辑 FreeCAD、STEP、STL、55 个打印件、BOM 和交互装配指南，并允许更换不同外壳。R25 的装配步骤只经过 CAD 审查，线缆、强度、传感器、供电和实体步态都尚未验证。
+
 ## 装机辅助工具 Assembly Tools
 
 装鸭子时先把身体托稳，再把关节摆到规定位置。这些工具帮助完成安装与零位校准，让软件记录的关节位置对应正确的实体姿势。
@@ -143,6 +165,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 - **[MHDuck](https://github.com/MHDuck/microduck)**（MHDuck）— HD1910 电机和 BNO085 姿态传感器复刻路线中的[零位校准参考](https://github.com/MHDuck/microduck/blob/master/%E6%A0%A1%E5%87%86.md)，展示怎样用定位工装托住鸭子、摆正身体，再设置关节。运行源码、动作文件和[训练仓库](https://github.com/MHDuck/microduck_rl)已公开；工装目前可参考照片和使用步骤，尚未找到可直接打印的设计文件。
 
 - **[Wamoduck](https://github.com/Wamotech/Wamoduck)**（Wamotech）— 为自己的整机重设计制作[站立零位校准架](https://github.com/Wamotech/Wamoduck/tree/HEAD/hardware/fixtures/standing-zero)，用四个打印件把机器人支承在指定姿态，便于按统一基准调整关节。STEP、STL 和打印工程已公开，实物试配状态待确认；结构对应 Wamoduck，尚未确认适配官方成品。
+
+- **[Microduck 舵机装机工具](https://github.com/masszhou/microduck-notes)**（masszhou）— 包含 DSH 网页操作台和 Mac 命令行台架，用于整机装配前搜索、检查、归中并小心测试 15 个 XL330 舵机。工具记录位置、电流、温度和总线错误，并设置显式运动限制。编码器中位只是台架参考，不是鸭子装好后的站立零位。
 
 ## 收录与贡献
 
