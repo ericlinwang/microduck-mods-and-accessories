@@ -15,7 +15,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 这个合集从“你想改哪一部分”出发，把这些分散的项目整理成八类。你可以来找一个校准托盘，也可以比较几条替代主控路线；既能看到独立发布的小配件，也能找到整机复刻仓库里的结构改件。目录面向想跟着制作的 DIY 用户，以及寻找技术参考、开发方向和合作对象的机器人开发者。
 
-当前收录 **45 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
+当前收录 **47 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
 
 本合集独立维护，与 Pollen Robotics / Hugging Face 无隶属关系。所收录项目归各自作者所有；代码、图纸、模型和图片分别遵循原项目许可。头图为主题概念插画，不代表已验证的配件设计。
 
@@ -36,7 +36,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 ## Ecosystem Status
 
-以下是截至 **2026-11-09**、基于本目录 45 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
+以下是截至 **2026-11-10**、基于本目录 47 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
 
 **不少配件是从整机复刻中长出来的。** 社区作者选择不同的电机、主控和电池后，需要重新安排连接板、机身内部空间、脚掌和校准工具。例如 [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) 包含可更换脚掌和腿部支撑，[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) 则逐步调整头盖、脚踝、线夹和设备收纳结构。找配件时，整机仓库同样值得翻看；其中的小改件往往对应具体装配需求。
 
@@ -128,6 +128,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[Duck King S288 电机改型](https://github.com/zhanma666/Xihack2026_The_Duck_King)**（zhanma666）— 把 XL330 换成宇树 S288 舵机，提供重建后的 MuJoCo 模型、关节映射、安装脚本和训练任务。电机参数目前仍是占位值，BAM 执行器模型未建立，被动站立还会前倾；训练链路跑通不能当作实体 S288 鸭已经能走。
 
+- **[Microduck 双电机虚拟实验室](https://github.com/gnana70/microduck-virtual-lab)**（gnana70）— 在采购舵机和装机前，用同一套固定版本的动作模型比较 XL330 与 HD-1910 的站立、行走偏航、侧推恢复和低电压表现。项目公开了 MuJoCo 脚本和结果文件，但所有数字都来自模拟，不能代替真实电机的扭矩、齿隙、供电和整机测试。
+
 ## 机身结构改进 Mechanical Design
 
 让机身适应新的零件、制造方法或尺寸。这些项目中，有的修正局部装配问题，有的重新设计整只鸭子的结构。
@@ -153,6 +155,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 - **[Microduck × Stack-chan](https://github.com/meganetaaan/microduck-stackchan)**（meganetaaan）— 把竖置 M5Stack Tab5 屏幕变成机器鸭的头部，公开装配结构、暂定 BOM、训练过的无臂步态和浏览器模拟器。薄型手臂目前只是外观，不计入质量、碰撞和重新训练；实机接线、强度和安全仍待验证。
 
 - **[IndieDuck Cyber Edition](https://github.com/armature-ai-labs/indieduck)**（Armature AI Labs）— 围绕一套共享机构组织可编辑 FreeCAD、STEP、STL、55 个打印件、BOM 和交互装配指南，并允许更换不同外壳。R25 的装配步骤只经过 CAD 审查，线缆、强度、传感器、供电和实体步态都尚未验证。
+
+- **[飞特复刻电源支架针脚避让改件](https://github.com/weishengwu6/microduck-build-log)**（weishengwu6）— 在电源支架上增加避让孔，避免 IMU 舵机后方针脚在装配时顶住支架。作者公开了修改后的 STEP 和 SolidWorks 文件，但还没有打印和实物试配；间隙、固定强度和线束位置仍需检查。仓库中的其余结构资料主要来自 fanhao375 上游。
 
 ## 装机辅助工具 Assembly Tools
 
