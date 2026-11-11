@@ -15,7 +15,7 @@ Microduck is the biped robot from Pollen Robotics and Hugging Face. Around it, c
 
 This collection starts with the part of the duck you want to change. Its eight categories cover individual accessories, modifications inside larger replica projects, and the software needed to run replacement hardware. You might come looking for a calibration tray, or to compare several controller platforms. The aim is to help DIY builders find something they can make, and robotics developers find a useful starting point or a potential collaborator.
 
-The directory currently contains **47 projects**. Each entry explains the purpose, the available materials and the key development milestone, then links to the author's own project. It should be clear whether the next step is downloading a model, following a build guide, studying code or watching an experiment develop. Projects are listed once, under their primary use.
+The directory currently contains **49 projects**. Each entry explains the purpose, the available materials and the key development milestone, then links to the author's own project. It should be clear whether the next step is downloading a model, following a build guide, studying code or watching an experiment develop. Projects are listed once, under their primary use.
 
 This is an independent community collection, unaffiliated with Pollen Robotics or Hugging Face. Linked projects belong to their authors; code, CAD, models and images retain their own licenses. The header is a concept illustration, not a set of validated accessory designs.
 
@@ -36,7 +36,7 @@ This is an independent community collection, unaffiliated with Pollen Robotics o
 
 ## Ecosystem Status
 
-These observations reflect the **47 projects in this directory as of 10 November 2026**. They show a community building and testing as it goes: some modifications have reached physical robots, while others explore new structures, controller platforms and ways to interact.
+These observations reflect the **49 projects in this directory as of 11 November 2026**. They show a community building and testing as it goes: some modifications have reached physical robots, while others explore new structures, controller platforms and ways to interact.
 
 **Many accessories grow out of full replica builds.** Choosing different motors, a computer or a battery creates work elsewhere: connection boards, internal space, feet and calibration fixtures may all need to change. [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) includes replaceable feet and revised leg supports; [CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) documents changes to head covers, ankles, cable clips and electronics mounts. A full-build repository can therefore be a useful source of individual parts, with a practical assembly problem behind each change.
 
@@ -129,6 +129,10 @@ Changing a controller or a joint motor often means changing wiring and software 
 - **[Duck King S288 Conversion](https://github.com/zhanma666/Xihack2026_The_Duck_King)** (zhanma666) — Replaces XL330 joints with Unitree S288 servos and supplies a rebuilt MuJoCo model, joint mapping, setup script and training task. Actuator values are still placeholders, the BAM model is missing and passive standing falls forward. Training integration is therefore not evidence of a working physical S288 duck.
 
 - **[Microduck Virtual Lab — XL330 vs HD-1910](https://github.com/gnana70/microduck-virtual-lab)** (gnana70) — Runs the same pinned walking policy against XL330 and HD-1910 servo models before parts are purchased. The scripts compare standing, walking drift, push recovery and battery voltage in MuJoCo. Results are simulation-only and do not replace measurements of real torque, backlash, power delivery or whole-robot behavior.
+
+- **[DoitDuck Cove-610 Replica](https://github.com/doit-open-org/DoitDuck)** (doit-open-org) — Rebuilds the HD1910 version around a Cove-610 controller, a custom bus connection board and an IMU/power board, then adds a browser controller, calibration wizard, voice interaction and optional vision and ranging. The repository publishes a BOM, schematics, firmware, image-building steps and servo tools. Motion policies must be imported separately, and the public material does not yet establish long-term whole-robot validation for every advertised feature.
+
+- **[HD1910 Walking and Recovery Baseline](https://github.com/wchengming1/open-robotics)** (wchengming1) — Keeps the original Microduck structure while adapting motor parameters, training code and retained walking and stand-up policies for HD1910 servos. ONNX policies, checkpoints and viewer scripts are available. The documented validation is limited to simulation; a physical build still needs power, bus, calibration and safety work.
 
 ## Mechanical Design
 
