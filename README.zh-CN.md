@@ -15,7 +15,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 这个合集从“你想改哪一部分”出发，把这些分散的项目整理成八类。你可以来找一个校准托盘，也可以比较几条替代主控路线；既能看到独立发布的小配件，也能找到整机复刻仓库里的结构改件。目录面向想跟着制作的 DIY 用户，以及寻找技术参考、开发方向和合作对象的机器人开发者。
 
-当前收录 **49 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
+当前收录 **52 个项目**。每个条目介绍项目的用途、可获得的资料和关键进度，并链接作者维护的原项目。希望你看完简介，就能判断下一步是下载模型、阅读教程、研究代码，还是继续关注作者的实验。独立发布的配件和综合项目均按主要用途归类，同一个项目只列一次。
 
 本合集独立维护，与 Pollen Robotics / Hugging Face 无隶属关系。所收录项目归各自作者所有；代码、图纸、模型和图片分别遵循原项目许可。头图为主题概念插画，不代表已验证的配件设计。
 
@@ -36,7 +36,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 ## Ecosystem Status
 
-以下是截至 **2026-11-11**、基于本目录 49 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
+以下是截至 **2026-11-12**、基于本目录 52 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
 
 **不少配件是从整机复刻中长出来的。** 社区作者选择不同的电机、主控和电池后，需要重新安排连接板、机身内部空间、脚掌和校准工具。例如 [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) 包含可更换脚掌和腿部支撑，[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) 则逐步调整头盖、脚踝、线夹和设备收纳结构。找配件时，整机仓库同样值得翻看；其中的小改件往往对应具体装配需求。
 
@@ -134,6 +134,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[HD1910 行走与起身基线](https://github.com/wchengming1/open-robotics)**（wchengming1）— 保留 Microduck 原始双足结构，为 HD1910 舵机补充电机参数、训练代码和行走、起身策略。项目公开 ONNX 模型、训练检查点和运行脚本，直接服务采用替代电机的复刻者。作者明确说明验证范围限于仿真，实体装机仍要解决供电、总线、关节零位和安全限制。
 
+- **[HD1910 完整训练工程](https://github.com/howe12/MicroDuck_1910_RL)**（howe12）— 按飞特 HD1910 规格重新计算整机质量和执行器参数，并加入平地、粗糙地形任务、195 项 CPU 测试与 ONNX 导出流程。它比只改一个电机参数更接近完整训练工程，但正式 5000 轮训练尚未完成，惯量仍按比例估算，也没有真机运行、零位标定或实体动作验收。
+
 ## 机身结构改进 Mechanical Design
 
 让机身适应新的零件、制造方法或尺寸。这些项目中，有的修正局部装配问题，有的重新设计整只鸭子的结构。
@@ -162,6 +164,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 - **[飞特复刻电源支架针脚避让改件](https://github.com/weishengwu6/microduck-build-log)**（weishengwu6）— 在电源支架上增加避让孔，避免 IMU 舵机后方针脚在装配时顶住支架。作者公开了修改后的 STEP 和 SolidWorks 文件，但还没有打印和实物试配；间隙、固定强度和线束位置仍需检查。仓库中的其余结构资料主要来自 fanhao375 上游。
 
+- **[Botbuilder Braccio 鸭式双足](https://github.com/eoinjordan/botbuilder)**（eoinjordan）— 用四个 Braccio SR431、两个 SR311 舵机、Arduino UNO Q 和 Braccio Shield 重做一只 Microduck 风格的可打印双足机器人。仓库公开七个主要打印件、七个配合检具、BOM、装配图和仿真资料。它只有六个主动关节，属于受 Microduck 启发的重新设计，不是 14 关节原版的直接替换件；目前也没有实体站立或行走记录。
+
 ## 装机辅助工具 Assembly Tools
 
 装鸭子时先把身体托稳，再把关节摆到规定位置。这些工具帮助完成安装与零位校准，让软件记录的关节位置对应正确的实体姿势。
@@ -175,6 +179,8 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 - **[Wamoduck](https://github.com/Wamotech/Wamoduck)**（Wamotech）— 为自己的整机重设计制作[站立零位校准架](https://github.com/Wamotech/Wamoduck/tree/HEAD/hardware/fixtures/standing-zero)，用四个打印件把机器人支承在指定姿态，便于按统一基准调整关节。STEP、STL 和打印工程已公开，实物试配状态待确认；结构对应 Wamoduck，尚未确认适配官方成品。
 
 - **[Microduck 舵机装机工具](https://github.com/masszhou/microduck-notes)**（masszhou）— 包含 DSH 网页操作台和 Mac 命令行台架，用于整机装配前搜索、检查、归中并小心测试 15 个 XL330 舵机。工具记录位置、电流、温度和总线错误，并设置显式运动限制。编码器中位只是台架参考，不是鸭子装好后的站立零位。
+
+- **[S288 舵机 Windows 上位机](https://github.com/uplinkira/microduck-host-unitree-s288)**（uplinkira）— 面向宇树 S288 复刻路线，提供串口连接、零位与方向设置、目标角度、速度和增益调节、位姿录制回放、遥测以及 CSV/JSON 导出。源码、离线演示模式和 v0.1.0 Windows 程序已经公开；本次发布没有连接实体舵机，真实零位、安全限制和整机轨迹仍需硬件验证。
 
 ## 收录与贡献
 
