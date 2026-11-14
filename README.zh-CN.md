@@ -36,13 +36,13 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 ## Ecosystem Status
 
-以下是截至 **2026-11-12**、基于本目录 52 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
+以下是截至 **2026-11-14**、基于本目录 52 个项目形成的观察。它们呈现出一个仍在边制作、边验证的改装社区：已经有人做出了可以展示和使用的改件，也有开发者在尝试新的结构、控制平台和交互方式。
 
 **不少配件是从整机复刻中长出来的。** 社区作者选择不同的电机、主控和电池后，需要重新安排连接板、机身内部空间、脚掌和校准工具。例如 [Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) 包含可更换脚掌和腿部支撑，[CMU Microduck](https://github.com/qilinxiaoxiang/cmu-microduck) 则逐步调整头盖、脚踝、线夹和设备收纳结构。找配件时，整机仓库同样值得翻看；其中的小改件往往对应具体装配需求。
 
 **已经有从文件走到实物的参考。** [microduck-tools](https://github.com/jackwuwei/microduck-tools) 同时提供校准托盘的打印文件和实际使用照片，[FabricTouch](https://github.com/JoyrayGu/Microduck-FabricTouch) 记录了触摸信号如何变成关节动作，一些复刻项目也展示了行走样机。想动手的人可以从这些材料了解制作过程，但复用时仍需对应作者的硬件版本：一套结构装得下的板子、一个电机适用的校准姿态，换到另一只鸭子上可能需要调整。
 
-**新的玩法正在推动更完整的系统实验。** 自动回充需要底座、定位、运动控制和电气连接一起工作；[duckmind](https://github.com/joseyarashio/duckmind) 与 [Gonzalo Duck](https://github.com/ggoonnzzaallo/gonzalo_duck) 已公开相关方案和仿真实验，实体完整回充仍未验证。替换主控也有类似的阶段差异：[esp-duck](https://github.com/xingxingRealzyx/esp-duck) 已在真实小板上运行模型，[spacemit-microduck](https://github.com/fivif/spacemit-microduck) 则用开发板控制模拟鸭。这些进展提供了继续开发的起点，下一步还包括真实电机、供电和整机测试。
+**新的玩法正在推动更完整的系统实验。** 自动回充需要底座、定位、运动控制和电气连接一起工作；[Microduck Playground](https://github.com/Vottivott/microduck-playground) 已公开可打印的 MicroDock v3 并完成手动试配，[duckmind](https://github.com/joseyarashio/duckmind) 与 [Gonzalo Duck](https://github.com/ggoonnzzaallo/gonzalo_duck) 则公开了其他底座方案和仿真实验。三者都还没有完整的实体自主回充记录。替换主控也有类似的阶段差异：[esp-duck](https://github.com/xingxingRealzyx/esp-duck) 已在真实小板上运行模型，[spacemit-microduck](https://github.com/fivif/spacemit-microduck) 则用开发板控制模拟鸭。这些进展提供了继续开发的起点，下一步还包括真实电机、供电和整机测试。
 
 **资料开放程度决定了你能从哪一步接着做。** 有些项目提供可编辑设计和打印文件，有些公开电路与固件，也有项目主要分享照片、接口和使用步骤。因此，本目录同时记录“公开了什么”和“验证到哪一步”。实机进展来自作者公开记录，并非目录维护者逐项试装；选定项目后，请沿原链接查看对应版本的制造资料、装配说明和许可。
 
@@ -64,7 +64,7 @@ Microduck 是 Pollen Robotics / Hugging Face 的双足机器人。围绕这只�
 
 从换一双脚掌到尝试高跷和秋千，这些项目把可打印附件与新的运动玩法联系起来。
 
-- **[Microduck Playground](https://github.com/Vottivott/microduck-playground)**（Vottivott）— 围绕 Microduck 做的一组运动实验：包括秋千、高跷、攀爬梯等玩法，并分享附件模型和仿真资料，可以一起看道具怎么做、鸭子怎样使用它。高跷已有打印实物图，各项动作的实机进度不同。仓库还包含 MicroDock 自动回充底座，目前只做了设计与仿真，尚无实体充电结果。
+- **[Microduck Playground](https://github.com/Vottivott/microduck-playground)**（Vottivott）— 围绕 Microduck 做的一组运动实验，包括秋千、高跷、攀爬梯等玩法，并分享附件模型和仿真资料。高跷已有打印实物图，各项动作的实机进度不同。仓库还公开了 [MicroDock v3](https://github.com/Vottivott/microduck-playground/blob/main/hardware/microdock-v3/README.md) 的 STL、打印工程和装配手册；作者已打印并手动试配磁吸插头。自主寻座和离座仍只在仿真中验证，尚无实体自主回充或真实充电循环记录。
 
 - **[Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy)**（kissqy）— 在 HD1910 电机复刻版上改进脚掌连接，让鸭子可以换用普通脚掌或滑轮鞋，也整理了腿部支撑和配套电路。适合想沿同一复刻路线尝试换脚玩法的人参考。滑轮鞋沿用官方设计，作者有实机资料，具体可用的动作需对应所采用的结构与软件版本。
 
